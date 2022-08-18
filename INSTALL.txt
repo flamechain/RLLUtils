@@ -1,0 +1,23 @@
+For Windows Binaries:
+
+    Note that this will not work without administrator mode.
+
+    Start by opening powershell in administrator mode. Make sure to navigate to the folder where you extracted this archive.
+    For example, if you used File Explorer copy the path and run 'cd "%"' replacing % with the path.
+    You will have to repeat this step every time you restart powershell.
+    Also make sure to run in administrator mode every time you restart powershell.
+
+    Run 'choco'. If it returns with 'choco: the term 'choco' is not recognized ...' run 'Set-ExecutionPolicy Bypass; ./install.ps1' (type 'Y' if prompted).
+    Now restart powershell and run 'choco install make' (type 'Y' if prompted).
+
+    Then restart powershell again and run 'make INSTALL_DIR="%"' replacing % with where you want to install RLLUtils.
+        example: make INSTALL_DIR="C:\Program Files\RLLUtils"
+
+    To uninstall run 'make INSTALL_DIR="%" uninstall' replacing % with where you installed RLLUtils. You may be prompted, type 'Y' if so.
+        example: make INSTALL_DIR="C:\Program Files\RLLUtils" uninstall
+
+To Build Sources (Requires GnuWin32):
+
+    Start powershell in administrator and run 'make install INSTALL_DIR="%"' replacing % with where you want to install RLLUtils.
+
+    To uninstall run 'make uninstall INSTALL_DIR="%"' replacing % with where you installed RLLUtils.

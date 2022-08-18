@@ -1,9 +1,9 @@
 For Windows Binaries:
 
     Start powershell in administrator and run 'install.bat' (if prompted type 'Y')
-    Then restart powershell and run 'make -f Windows.mk install INSTALL_DIR="%"' replacing % with where you want to install RLLUtils
+    Then restart powershell and run 'make -f Windows.mk INSTALL_DIR="%"' replacing % with where you want to install RLLUtils
 
-    To uninstall run 'make -f Windows.mk uninstall INSTALL_DIR="%"' replacing % with where you installed RLLUtils
+    To uninstall run 'make -f Windows.mk INSTALL_DIR="%" uninstall' replacing % with where you installed RLLUtils
 
 To Build Sources (Requires GnuWin32):
 

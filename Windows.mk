@@ -1,5 +1,8 @@
 INSTALL_DIR=
 
+.PHONY: init
+.PHONY: install
+
 all: init install
 
 init:
@@ -11,26 +14,22 @@ ifeq ($(INSTALL_DIR),)
 	$(error no install directory provided (example: make INSTALL_DIR="C:/Program Files/RLLUtils"))
 endif
 
-
 	@echo installing to $(INSTALL_DIR) ...
 	-mkdir "$(INSTALL_DIR)"
 	-mkdir "$(INSTALL_DIR)/bin"
-	echo . > rllutils.temp
+	echo . > "$(INSTALL_DIR)/rllutils.temp"
 
 install:
 	@echo installing EasyATP ...
-	copy bin/easyatp.exe "$(INSTALL_DIR)/bin"
-	cd bin
-	./installer.exe "$(INSTALL_DIR)/bin/easyatp.exe"
-	cd ..
+	cp bin/easyatp.exe "$(INSTALL_DIR)/bin"
+	./bin/installer.exe "$(INSTALL_DIR)/bin/easyatp.exe"
 
 	@echo done
 
 uninstall:
 
 	rm "$(INSTALL_DIR)/rllutils.temp"
-	cd bin
-	./uninstaller.exe
+	./bin/uninstaller.exe
 	rm -r "$(INSTALL_DIR)"
 
 	@echo done
